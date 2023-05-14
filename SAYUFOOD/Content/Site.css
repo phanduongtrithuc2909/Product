@@ -28,3 +28,38 @@ textarea {
     background-color: #777;
     border-color: #fff
 }
+.jumbotron {
+    
+    background-size: cover;
+    color: #ffffff;
+    text-align: center;
+    padding: 200px 0;
+
+}
+
+    .jumbotron h1 {
+        font-size: 50px;
+        margin-bottom: 20px;
+        color: #ff0000;
+    }
+
+    .jumbotron p {
+        font-size: 24px;
+        margin-bottom: 40px;
+        color: #333;
+    }
+
+.button {
+    display: inline-block;
+    background-color: #ffd000;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color;
+}
+
+.btn:hover {
+    background-color: #FFA500;
+}
+

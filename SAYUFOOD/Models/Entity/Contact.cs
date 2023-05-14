@@ -22,6 +22,5 @@ namespace SAYUFOOD.Models.Entity
 
         [StringLength(2000, ErrorMessage = "Không quá 2000 kí tự")]
         public string Message { get; set; }
-        public bool IsRead { get; set; }
     }
 }
