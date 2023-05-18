@@ -7,13 +7,13 @@ namespace SAYUFOOD.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class updateproduct : IMigrationMetadata
+    public sealed partial class createtable : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(updateproduct));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(createtable));
         
         string IMigrationMetadata.Id
         {
-            get { return "202305131107108_updateproduct"; }
+            get { return "202305160723031_createtable"; }
         }
         
         string IMigrationMetadata.Source

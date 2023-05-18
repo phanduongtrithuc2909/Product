@@ -5,39 +5,31 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace SAYUFOOD.Areas.Admin.Controllers
 {
-    public class ProductController : Controller
+
+    public class CategoryController : Controller
     {
         private ApplicationDbContext _dbcontext = new ApplicationDbContext();
-        // GET: Admin/Product
-        public ProductController()
-        {
-            _dbcontext = new ApplicationDbContext();
-        }
+        // GET: Admin/Category
         public ActionResult Index()
         {
-            var products = _dbcontext.Products;
-            return View(products);
+            var categorys = _dbcontext.Categories;
+            return View(categorys);
         }
         public ActionResult Add()
         {
-            ViewBag.Category = new SelectList(_dbcontext.Categories.ToList(), "Id","Title");
             return View();
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Add(Product model)
+        public ActionResult Add(Category model)
         {
             if (ModelState.IsValid)
             {
 
-                model.CreateDate = DateTime.Now;
-                model.ModifiedDate = DateTime.Now;
-                _dbcontext.Products.Add(model);
+                _dbcontext.Categories.Add(model);
                 _dbcontext.SaveChanges();
                 return RedirectToAction("Index");
 
@@ -46,26 +38,18 @@ namespace SAYUFOOD.Areas.Admin.Controllers
             return View(model);
 
         }
-        //public ActionResult Search(string SearchString)
-        //{
-        //    var categorys = _dbcontext.Products.Where(x => x.Category.Contains(SearchString)).ToList();
-
-        //    return View(categorys);
-        //}
         public ActionResult Edit(int id)
         {
-            ViewBag.Category = new SelectList(_dbcontext.Categories.ToList(), "Id", "Title");
-            var items = _dbcontext.Products.Find(id);
+            var items = _dbcontext.Categories.Find(id);
             return View(items);
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(Product model)
+        public ActionResult Edit(Category model)
         {
             if (ModelState.IsValid)
             {
-                model.ModifiedDate = DateTime.Now;
-                _dbcontext.Products.Attach(model);
+                _dbcontext.Categories.Attach(model);
                 _dbcontext.Entry(model).State = System.Data.Entity.EntityState.Modified;
                 _dbcontext.SaveChanges();
                 return RedirectToAction("Index");
@@ -79,10 +63,10 @@ namespace SAYUFOOD.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Delete(int id)
         {
-            var items = _dbcontext.Products.Find(id);
+            var items = _dbcontext.Categories.Find(id);
             if (items != null)
             {
-                _dbcontext.Products.Remove(items);
+                _dbcontext.Categories.Remove(items);
                 _dbcontext.SaveChanges();
                 return Json(new { success = true });
             }

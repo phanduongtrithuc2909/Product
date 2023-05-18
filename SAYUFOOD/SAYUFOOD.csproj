@@ -198,6 +198,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\CategoryController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
@@ -206,37 +207,14 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202305111646072_CreateDatabase.cs" />
-    <Compile Include="Migrations\202305111646072_CreateDatabase.designer.cs">
-      <DependentUpon>202305111646072_CreateDatabase.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202305121533350_update.cs" />
-    <Compile Include="Migrations\202305121533350_update.designer.cs">
-      <DependentUpon>202305121533350_update.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202305121538240_updatee.cs" />
-    <Compile Include="Migrations\202305121538240_updatee.designer.cs">
-      <DependentUpon>202305121538240_updatee.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202305121543293_updateee.cs" />
-    <Compile Include="Migrations\202305121543293_updateee.designer.cs">
-      <DependentUpon>202305121543293_updateee.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202305131107108_updateproduct.cs" />
-    <Compile Include="Migrations\202305131107108_updateproduct.designer.cs">
-      <DependentUpon>202305131107108_updateproduct.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202305131147473_updateproductt.cs" />
-    <Compile Include="Migrations\202305131147473_updateproductt.designer.cs">
-      <DependentUpon>202305131147473_updateproductt.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202305140657187_updatecontact.cs" />
-    <Compile Include="Migrations\202305140657187_updatecontact.designer.cs">
-      <DependentUpon>202305140657187_updatecontact.cs</DependentUpon>
+    <Compile Include="Migrations\202305160723031_createtable.cs" />
+    <Compile Include="Migrations\202305160723031_createtable.designer.cs">
+      <DependentUpon>202305160723031_createtable.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Common.cs" />
+    <Compile Include="Models\Entity\Category.cs" />
     <Compile Include="Models\Entity\Contact.cs" />
     <Compile Include="Models\Entity\Order.cs" />
     <Compile Include="Models\Entity\OrderDetail.cs" />
@@ -3269,6 +3247,9 @@
     <Content Include="Content\assets\plugins\themify-icons\fonts\themify.eot" />
     <Content Include="Content\assets\plugins\themify-icons\fonts\themify.ttf" />
     <Content Include="Content\assets\plugins\themify-icons\fonts\themify.woff" />
+    <Content Include="Areas\Admin\Views\Category\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Category\Add.cshtml" />
+    <Content Include="Areas\Admin\Views\Category\Edit.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -3328,26 +3309,8 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202305111646072_CreateDatabase.resx">
-      <DependentUpon>202305111646072_CreateDatabase.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202305121533350_update.resx">
-      <DependentUpon>202305121533350_update.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202305121538240_updatee.resx">
-      <DependentUpon>202305121538240_updatee.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202305121543293_updateee.resx">
-      <DependentUpon>202305121543293_updateee.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202305131107108_updateproduct.resx">
-      <DependentUpon>202305131107108_updateproduct.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202305131147473_updateproductt.resx">
-      <DependentUpon>202305131147473_updateproductt.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202305140657187_updatecontact.resx">
-      <DependentUpon>202305140657187_updatecontact.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202305160723031_createtable.resx">
+      <DependentUpon>202305160723031_createtable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

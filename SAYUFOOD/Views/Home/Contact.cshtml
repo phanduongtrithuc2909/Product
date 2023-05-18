@@ -1,4 +1,5 @@
-﻿@{
+﻿@model SAYUFOOD.Models.Entity.Contact
+@{
     ViewBag.Title = "Contact";
 }
 <div class="super_container">
@@ -20,16 +21,15 @@
         </div>
 
         <!-- Map Container -->
-
-        <div class="row">
-            <div class="col">
-                <div id="google_map">
-                    <div class="map_container">
-                        <div id="map"></div>
+        @*<div class="row">
+                <div class="col">
+                    <div id="google_map">
+                        <div class="map_container">
+                            <div id="map"></div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
+            </div>*@
 
         <!-- Contact Us -->
 
@@ -40,14 +40,14 @@
                     <h1>Liên hệ chúng tôi</h1>
                     <p>Có nhiều cách để liên hệ với chúng tôi. Bạn có thể gửi cho chúng tôi một dòng, gọi cho chúng tôi hoặc gửi email, chọn những gì phù hợp với bạn nhất.</p>
                     <div>
-                        <p>(+84) 999-9999</p>
-                        <p>info.Sayufood@kgmail.com</p>
+                        <p><i class="fa fa-phone"></i>(+84) 999-9999</p>
+                        <p><i class="fa fa-envelope"></i>info.Sayufood@kgmail.com</p>
                     </div>
                     <div>
-                        <p>mm</p>
+                        <p><i class="fa fa-map-marker"></i>Tp.HCM</p>
                     </div>
                     <div>
-                        <p>Giờ mở: 8.00-18.00 All Day</p>
+                        <p><i class="fa fa-clock-o"></i> 8.00-18.00 All Day</p>
                     </div>
                 </div>
 
@@ -73,10 +73,10 @@
                         <div>
                             <input id="input_name" class="form_input input_name input_ph" type="text" name="name" placeholder="Name" required="required" data-error="Name is required.">
                             <input id="input_email" class="form_input input_email input_ph" type="email" name="email" placeholder="Email" required="required" data-error="Valid email is required.">
-                            <textarea id="input_message" class="input_ph input_message" name="message" placeholder="Message" rows="3" required data-error="Please, write us a message."></textarea>
+                            <textarea id="input_message" class="input_ph input_message" name="message" placeholder="Message" rows="3" required="" data-error="Please, write us a message."></textarea>
                         </div>
                         <div>
-                            <button id="review_submit" type="submit" class="red_button message_submit_btn trans_300" value="Submit">Gửi </button>
+                            <button id="review_submit" type="submit" class="red_button message_submit_btn trans_300" value="Submit">Gửi</button>
                         </div>
                     </form>
                 </div>

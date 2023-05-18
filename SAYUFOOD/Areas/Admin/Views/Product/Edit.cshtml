@@ -45,8 +45,8 @@
                                 <div class="form-group">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Loại sản phẩm</label>
-                                        @Html.TextBoxFor(x => x.Category, new { @class = "form-control", @placeholder = "Loại sản phẩm" })
-                                        @Html.ValidationMessageFor(x => x.Category, null, new { @class = "text-danger" })
+                                        @Html.DropDownListFor(x => x.CategoryId, ViewBag.Category as SelectList, "-Chọn loại sản phẩm", new { @class = "form-control", @placeholder = "Loại sản phẩm" })
+                                        @Html.ValidationMessageFor(x => x.CategoryId, null, new { @class = "text-danger" })
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -63,12 +63,12 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Mô tả</label>
-                                    @Html.TextBoxFor(x => x.Description, new { @class = "form-control", @placeholder = "Mô tả" })
+                                    @Html.TextAreaFor(x => x.Description, new { @class = "form-control", @placeholder = "Mô tả" })
                                     @Html.ValidationMessageFor(x => x.Description, null, new { @class = "text-danger" })
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Chi tiết sản phẩm</label>
-                                    @Html.TextBoxFor(x => x.Detail, new { @class = "form-control", @placeholder = "Chi tiết sản phẩm" })
+                                    @Html.TextAreaFor(x => x.Detail, new { @class = "form-control", @placeholder = "Chi tiết sản phẩm" })
                                     @Html.ValidationMessageFor(x => x.Detail, null, new { @class = "text-danger" })
                                 </div>
                                 <div class="row">

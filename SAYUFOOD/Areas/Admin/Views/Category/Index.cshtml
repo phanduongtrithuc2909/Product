@@ -1,6 +1,6 @@
-﻿@model IEnumerable<SAYUFOOD.Models.Entity.Product>
+﻿@model IEnumerable<SAYUFOOD.Models.Entity.Category>
 @{
-    ViewBag.Title = "Danh Mục Sản Phẩm";
+    ViewBag.Title = "Danh Mục Loại Sản Phẩm";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
@@ -9,12 +9,12 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1>Quản lý sản phẩm</h1><br />
+                <h1>Quản lý loại sản phẩm</h1><br />
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item active">Product</li>
+                    <li class="breadcrumb-item active">Category</li>
                 </ol>
             </div>
         </div>
@@ -27,27 +27,22 @@
     <!-- Default box -->
     <div class="card">
         <div class="card-header">
-            <h3 class="card-title">Danh sách sản phẩm</h3>
+            <h3 class="card-title">Danh sách loại sản phẩm</h3>
             <div class="card-tools">
                 <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
                     <i class="fas fa-minus"></i>
                 </button>
-                <a href="/Admin/Product/Add" class="btn btn-primary">Thêm sản phẩm</a>
+                <a href="/Admin/Category/Add" class="btn btn-primary">Thêm loại sản phẩm</a>
             </div>
         </div>
         <div class="card-body">
             <table class="table table-hover">
                 <thead>
                     <tr>
-                        <th></th>
+                        <th><input type="checkbox" id="SelectAll" /></th>
                         <th>STT</th>
-                        <th>Hình ảnh</th>
-                        <th>Tên sản phẩm</th>
-                        <th>Mã loại sản phẩm</th>
-                        <th>Số lượng</th>
-                        <th>Giá</th>
-                        <th>Ngày tạo</th>
-                        <th>Chức năng</th>
+                        <th>Tên loại</th>
+                        <th>Mô tả</th>
                         <th style="width:150px;"></th>
                     </tr>
                 </thead>
@@ -60,14 +55,11 @@
                             <tr id="trow_@item.Id">
                                 <td></td>
                                 <td>@i</td>
-                                <td><img src="@item.Image" width="50" /></td>
                                 <td>@item.Title</td>
-                                <td>@item.CategoryId</td>
-                                <td>@item.Quantity</td>
-                                <td>@item.Price</td>
-                                <td>@item.CreateDate.ToString("dd/MM/yyyy")</td>
+                                <td>@item.Description</td>
+
                                 <td>
-                                    <a href="/Admin/Product/Edit/@item.Id" class="btn btn-sm btn-primary">Sửa</a>
+                                    <a href="/Admin/Category/Edit/@item.Id" class="btn btn-sm btn-primary">Sửa</a>
                                     <a href="#" data-id="@item.Id" class="btn btn-sm btn-danger Delete">Xóa</a>
                                 </td>
                             </tr>
