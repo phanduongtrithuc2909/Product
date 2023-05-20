@@ -205,6 +205,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\ShoppingCartController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -214,6 +215,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\ShoppingCart.cs" />
     <Compile Include="Models\Common.cs" />
     <Compile Include="Models\Entity\Category.cs" />
     <Compile Include="Models\Entity\Contact.cs" />
@@ -1197,6 +1199,7 @@
     <Content Include="Content\image-home-user\doi tra.jpg" />
     <Content Include="Content\image-home-user\facebook.png" />
     <Content Include="Content\image-home-user\gg.png" />
+    <Content Include="Content\image-home-user\ggmap.png" />
     <Content Include="Content\image-home-user\giao hang.png" />
     <Content Include="Content\image-home-user\hang-nhap-khau.jpg" />
     <Content Include="Content\image-home-user\ho tro.jpg" />
@@ -3263,6 +3266,7 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\jsShopping.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -3299,11 +3303,13 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Product\Index.cshtml" />
+    <Content Include="Views\ShoppingCart\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Content\ckfinder\ckfinder\userfiles\" />
+    <Folder Include="Views\CommonCon\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

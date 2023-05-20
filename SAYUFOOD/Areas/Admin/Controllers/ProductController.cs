@@ -77,7 +77,7 @@ namespace SAYUFOOD.Areas.Admin.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id)
+        public JsonResult Delete(int? id)
         {
             var items = _dbcontext.Products.Find(id);
             if (items != null)

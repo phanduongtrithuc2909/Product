@@ -7,6 +7,7 @@ using System.Web;
 
 namespace SAYUFOOD.Models.Entity
 {
+    [Serializable]
     [Table("tb_Product")]
     public class Product : Common
     {

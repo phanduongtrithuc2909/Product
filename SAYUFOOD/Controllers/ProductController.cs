@@ -16,5 +16,7 @@ namespace SAYUFOOD.Controllers
             List<Product> items = _dbcontext.Products.ToList<Product>();
             return View(items);
         }
+
+        
     }
 }
