@@ -88,8 +88,10 @@
                                     <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i></a></li>
                                     <li class="checkout">
                                         <a href="/ShoppingCart">
+                                            <span id="checkout_items" class="checkout_items">@Html.Action("Bagcart", "ShoppingCart")</span>
                                             <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                            
+
+
                                         </a>
                                     </li>
                                 </ul>
@@ -118,7 +120,7 @@
                         <div class="footer_nav_container d-flex flex-sm-row flex-column align-items-center justify-content-lg-start justify-content-center text-center">
                             <ul class="footer_nav">
                                 <li><a href="~/home/index">Trang chủ</a></li>
-                                <li><a href="#">Sản phẩm</a></li>
+                                <li><a href="~/product/index">Sản phẩm</a></li>
                                 <li><a href="~/home/contact">Liên hệ</a></li>
                                 <li><a href="~/home/about">Giới thiệu</a></li>
                             </ul>

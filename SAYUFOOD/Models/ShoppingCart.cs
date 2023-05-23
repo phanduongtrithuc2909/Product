@@ -65,6 +65,14 @@ namespace SAYUFOOD.Models
             items.RemoveAll(x => x.Shopping_Product.Id == id);
         }
 
+        public int Total_Quantity()
+        {
+            return items.Sum(x => x.Shopping_Quantity);
+        }
+        public void ClearCart()
+        {
+            items.Clear();
+        }
         
 
         

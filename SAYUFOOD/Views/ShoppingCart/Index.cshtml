@@ -29,7 +29,7 @@
                                     <th>Tên loại sản phẩm</th>
                                     <th>Hình ảnh</th>
                                     <th>Số lượng còn</th>
-                                    <th>Số lượng đã mua</th>
+                                    <th>Số lượng mua</th>
                                     <th>Giá</th>
                                     <th>Tổng tiền</th>
                                     <th></th>
@@ -71,7 +71,7 @@
                                             @total
                                         </td>
                                         <td>
-                                            <a href="~/ShoppingCart/XoaItemCart/@item.Shopping_Product.Id">Xóa sản phẩm</a>
+                                            <a href="~/ShoppingCart/XoaItemCart/@item.Shopping_Product.Id" class="btn btn-danger">Xóa sản phẩm</a>
                                         </td>
 
                                     </tr>
@@ -80,11 +80,20 @@
                             </tbody>
                             <tfoot>
                                 <tr>
-                                    <td colspan="5" style="text-align:right; width: 1085px">Tổng tiền giỏ hàng: @Model.Total_money()</td>
+                                    <td colspan="5" style="text-align:right; width: 1085px">Tổng tiền giỏ hàng: <b>@Model.Total_money()</b></td>
+                                    
                                 </tr>
+                                
                             </tfoot>
                         </table>
                     </div>
+                    <div style="text-align: right">
+                        <ul>
+                            <li>
+                                <a href="~/ShoppingCart/XoaAllItemCart" class="btn btn-sm btn-danger" style="font-size: 15px; border-radius: 10%; margin-right:10px">Xoá hết</a><a href="#" class="btn btn-sm btn-success" style="font-size: 15px; border-radius: 10%">Thanh toán</a>
+                            </li>
+                            
+                        </ul> </div>
                 </div>
             </div>
         </div>

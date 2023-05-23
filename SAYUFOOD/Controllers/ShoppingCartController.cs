@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.UI.WebControls;
 
 namespace SAYUFOOD.Controllers
 {
@@ -42,7 +43,7 @@ namespace SAYUFOOD.Controllers
             {
                 GetCart().Add(pro);
             }
-            return RedirectToAction("Index", "ShoppingCart");
+            return RedirectToAction("Index", "Product");
         }
         // gio hang
 
@@ -66,6 +67,27 @@ namespace SAYUFOOD.Controllers
             ShoppingCart cart = Session["Cart"] as ShoppingCart;
             cart.Remove_CartItem(id);
             return RedirectToAction("Index", "ShoppingCart");
+        }
+        public ActionResult XoaAllItemCart()
+        {
+            ShoppingCart cart = Session["Cart"] as ShoppingCart;
+            cart.ClearCart();
+            return RedirectToAction("Index", "ShoppingCart");
+        }
+
+
+        //so luong san pham trong gio hang
+        public PartialViewResult Bagcart()
+        {
+            int _item = 0;
+            ShoppingCart cart = Session["Cart"] as ShoppingCart;
+            if(cart != null)
+            {
+                _item = cart.Total_Quantity();
+            }
+
+            ViewBag.infoCart = _item;
+            return PartialView("Bagcart");
         }
 
 
