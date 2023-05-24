@@ -90,6 +90,23 @@ namespace SAYUFOOD.Controllers
             return PartialView("Bagcart");
         }
 
+        // thanh toan
+
+        public ActionResult Checkout()
+        {
+            if (Session["Cart"] == null)
+                return RedirectToAction("Index", "ShoppingCart");
+            ShoppingCart cart = Session["Cart"] as ShoppingCart;
+
+
+            return View(cart);
+            
+        }
+
+        
+
+
+
 
 
     }

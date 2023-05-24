@@ -14,7 +14,7 @@ namespace SAYUFOOD.Models
         public Product Shopping_Product { get; set; }
         public int Shopping_Quantity { get; set; }
 
-        //public double Shopping_Total { get; set; }
+        public double Shopping_Total { get; set; }
 
     }
     // Gio hang 
