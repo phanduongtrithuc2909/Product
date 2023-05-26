@@ -51,14 +51,30 @@
                                         </ul>
                                     </li>
                                     <li class="account">
-                                        <a href="#">
-                                            My Account
-                                            <i class="fa fa-angle-down"></i>
-                                        </a>
-                                        <ul class="account_selection">
-                                            <li><a href="#"><i class="fa fa-sign-in" aria-hidden="true"></i>Sign In</a></li>
-                                            <li><a href="#"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
-                                        </ul>
+
+                                        @if (!Request.IsAuthenticated)
+                                        {
+                                            <a href="#">
+                                                My Account
+                                                <i class="fa fa-angle-down"></i>
+                                            </a>
+                                            <ul class="account_selection">
+                                                <li><a href="/account/login"><i class="fa fa-sign-in" aria-hidden="true"></i>Sign In</a></li>
+                                                <li><a href="/account/register"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
+                                            </ul>
+                                        }
+                                        else
+                                        {
+                                            <a href="#">
+                                                Chào: @User.Identity.Name
+                                                <i class="fa fa-angle-down"></i>
+                                            </a>
+                                            <ul class="account_selection">
+                                                <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i>Profile</a></li>
+                                                <li><a href="javascript:document.getElementById('logOffForm').submit()"><i class="fa fa-sign-in" aria-hidden="true"></i>Đăng xuất</a></li>
+                                            </ul>
+                                        }
+
                                     </li>
                                 </ul>
                             </div>
@@ -85,7 +101,7 @@
                                 </ul>
                                 <ul class="navbar_user">
                                     <li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i></a></li>
+                                    
                                     <li class="checkout">
                                         <a href="/ShoppingCart">
                                             <span id="checkout_items" class="checkout_items">@Html.Action("Bagcart", "ShoppingCart")</span>
@@ -148,6 +164,15 @@
         </footer>
 
     </div>
+    @if (Request.IsAuthenticated)
+    {
+        <div style="display:none">
+            @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { @id = "logOffForm" }))
+            {
+                @Html.AntiForgeryToken()
+            }
+        </div>
+    }
 
     @*@Scripts.Render("~/bundles/jquery")
         @Scripts.Render("~/bundles/bootstrap")*@

@@ -10,6 +10,7 @@ using System.Web.UI.WebControls;
 
 namespace SAYUFOOD.Areas.Admin.Controllers
 {
+    [Authorize(Roles = "Admin, Employe")]
     public class ProductController : Controller
     {
         private ApplicationDbContext _dbcontext = new ApplicationDbContext();

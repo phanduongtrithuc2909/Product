@@ -1,4 +1,5 @@
 ﻿using SAYUFOOD.Models;
+using SAYUFOOD.Models.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -102,8 +103,20 @@ namespace SAYUFOOD.Controllers
             return View(cart);
             
         }
+        //public ActionResult Checkoutsuccess(OrderViewModel )
+        //{
+        //    if (Session["Cart"] == null)
+        //        return RedirectToAction("Index", "ShoppingCart");
+        //    ShoppingCart cart = Session["Cart"] as ShoppingCart;
 
-        
+
+        //    return View(cart);
+
+        //}
+
+
+
+
 
 
 

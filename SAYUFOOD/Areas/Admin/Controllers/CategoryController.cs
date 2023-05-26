@@ -8,7 +8,7 @@ using System.Web.Mvc;
 
 namespace SAYUFOOD.Areas.Admin.Controllers
 {
-
+    [Authorize(Roles = "Admin, Employe")]
     public class CategoryController : Controller
     {
         private ApplicationDbContext _dbcontext = new ApplicationDbContext();
