@@ -53,11 +53,24 @@
 
             <!-- Breadcrumbs -->
 
-            <div class="breadcrumbs d-flex flex-row align-items-center">
+            <div class="breadcrumbs d-flex flex-row align-items-center" style="margin-bottom: 10px">
                 <ul>
                     <li><a href="~/home/index">Trang Chủ</a></li>
                     <li class="active"><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>Sản Phẩm</a></li>
+
                 </ul>
+                
+            </div>
+            <div class="breadcrumbs d-flex flex-row align-items-center" style="margin-bottom: 10px">
+               
+                    @using (Html.BeginForm())
+                    {
+                        <div class="form-group form-inline">
+                            Tìm sản phẩm: @Html.TextBox("SearchString", "", new { @class = "form-control" })
+                            <button type="submit" class="btn btn-default" value="Tìm kiếm"><i class="fa fa-search" aria-hidden="true"></i></button>
+                        </div>
+                    }
+                
             </div>
 
             <!-- Main Content -->

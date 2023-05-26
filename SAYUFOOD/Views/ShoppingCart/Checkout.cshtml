@@ -17,7 +17,7 @@
                     <p>Hãy kiểm tra lại thông tin đơn hàng của bạn !!</p>
                 </div>
             </div>
-            <div class="row">
+            @*<div class="row">
                 <div class="col-md-6">
                     <h3>Thông tin khách hàng</h3>
                     <div class="form-group">
@@ -47,11 +47,11 @@
                         <button type="button" class="btn btn-success" style="width: 280px">Đặt hàng</button>
                     </div>
 
-                </div>
+                </div>*@
 
 
                 <!--Check gio hang-->
-                <div class="col-md-6">
+                @*<div class="col-md-6">*@
                     <div class="row>">
                         <div class="col-md-8" style="padding-left: 1px">
                             <h3>Giỏ hàng của bạn</h3>
@@ -76,6 +76,9 @@
                                         @item.Shopping_Product.Title
                                     </td>
                                     <td>
+                                        <img class="product-content-img " src="@item.Shopping_Product.Image" style="width:150px">
+                                    </td>
+                                    <td>
                                         @sol
                                     </td>
                                     <td>
@@ -83,23 +86,33 @@
                                     </td>
                                 </tr>
                             }
-                            <tr>
-                                <td>Tổng tiền giỏ hàng: </td>
-                                <td> </td>
-                                <td><b>@Model.Total_money()</b></td>
-                            </tr>
+                        <tr>
+                            <td>Tổng tiền giỏ hàng: </td>
+                            <td> </td>
+                            <td> </td>
+                            <td><b>@Model.Total_money()</b></td>
+                        </tr>
                         </table>
 
                     }
-
-
-
-
-                </div>
+        <div class="row">
+            <div class="col-md-12" style="text-align:right">
+                <a href="#" class="btn btn-success" style="width: 280px">Đặt hàng</a>
             </div>
+            <div class="col-md-12">
+                <a href="/product/index" class="btn btn-default" style="width: 280px"><i class="fa fa-angle-left" aria-hidden="true" style="margin-right: 10px; font-size:20px"></i>Tiếp tục mua hàng</a>
+            </div>
+
+        </div>
+
+
+
+
+            </div>
+            @*</div>*@
         </div>
     </div>
-</div>
+@*</div>*@
 
  
 
